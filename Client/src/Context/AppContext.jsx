@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from "react";
-import axios from 'axios'
 import { toast } from 'react-toastify'
 import axiosInstance from "../Utils/AxiosInstance";
 
@@ -7,7 +6,6 @@ export const AppContext = createContext()
 
 export const AppContextProvider = (props) => {
 
-    const backendUrl = import.meta.env.BACKEND_URL || 'http://localhost:5000'
     const [isLogged, setIsLogged] = useState(false)
     const [userData, setUserData] = useState(false)
 
@@ -40,7 +38,6 @@ export const AppContextProvider = (props) => {
     }, [])
 
     const value = {
-        backendUrl,
         isLogged, setIsLogged,
         userData, setUserData,
         getUserData
