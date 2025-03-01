@@ -12,7 +12,7 @@ const port = process.env.PORT
 // mongodb configuration
 connectDB()
 
-const allowedOrigins = ['http://localhost:5173', 'https://mern-auth-weld.vercel.app']
+const allowedOrigins = process.env.FRONTEND_URL
 
 app.use(express.json())
 app.use(cookieParser())
